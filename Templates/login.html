@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+
+<div class="container right-panel-active">
+	<!-- Sign Up -->
+	<div class="container__form container--signup"  >
+		<form action="/insertar_usuario" class="form" method="POST">
+			<h2 class="form__title">Registrate</h2>
+			<input type="number" placeholder="Rut" class="input" name="erut"/>
+			<input type="email" placeholder="Email" class="input" name="eemail"/>
+			<input type="password" placeholder="Password" class="input" name="epassword"/>
+			<button class="btn" type="submit">Registrate</button>
+		</form>
+	</div>
+
+	<!-- Sign In -->
+	<div class="container__form container--signin" >
+		<form action="/entrar" class="form" id="form2" method="POST">
+			<h2 class="form__title">Inicia Sesion</h2>
+			<input type="email" placeholder="Email" class="input" name="btemail"/>
+			<input type="password" placeholder="Password" class="input" name="btpassword"/>
+			<button class="btn">Iniciar Sesion</button>
+		</form>
+	</div>
+
+	<!-- Overlay -->
+	<div class="container__overlay">
+		<div class="overlay">
+			<div class="overlay__panel overlay--left">
+				<button class="btn" id="signIn">Inicia Sesion</button>
+			</div>
+			<div class="overlay__panel overlay--right">
+				<button class="btn" id="signUp">Registrate</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
