@@ -165,13 +165,6 @@ body {
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
 .btn_volver {
 	background-color: var(--blue);
 	background-image: linear-gradient(90deg, var(--blue) 0%, var(--lightblue) 74%);
@@ -186,14 +179,6 @@ body {
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
 }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
 
 .form > .btn {
 	margin-top: 1.5rem;

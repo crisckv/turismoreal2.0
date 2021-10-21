@@ -1,16 +1,4 @@
-<<<<<<< HEAD
 from flask import Flask, render_template, request, redirect, url_for, flash , session
-=======
-<<<<<<< HEAD
-from flask import Flask, render_template, request, redirect, url_for, flash , session
-=======
-<<<<<<< HEAD
-from flask import Flask, render_template, request, redirect, url_for, flash , session
-=======
-from flask import Flask, render_template, request, redirect, url_for, flash , session, render_template_string
->>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
 import bcrypt
 from config import getConnection
 
@@ -24,52 +12,18 @@ semilla = bcrypt.gensalt()
 
 @app.route('/')
 def home():
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
     if 'admin' in session:
         return fnAdmin([])
     if 'email' in session:
         return fnUsuario([])
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-    if 'email' in session:
-        return redirect(url_for('servicio'))
->>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
     return render_template('index.html')
   
 @app.route('/login')
 def login():
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
     if 'admin' in session:
         return fnAdmin([])
     if 'email' in session:
         return fnUsuario([])
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-    if 'email' in session:
-        return redirect(url_for('servicio'))
->>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
     return render_template('login.html')
 
 @app.route('/insertar_usuario', methods=['GET', 'POST'])
@@ -105,47 +59,16 @@ def insertar_usuario():
        print("password codificado:" ,password_encode)
        print("password encriptado:", password_encriptado)
        print("password encriptado:", passwordstring)
-<<<<<<< HEAD
     cursor.execute("INSERT INTO CLIENTE(rut,correo,clave) VALUES("+rut+",'"+correo+"','"+passwordstring+"')")
-=======
-<<<<<<< HEAD
-    cursor.execute("INSERT INTO CLIENTE(rut,correo,clave) VALUES("+rut+",'"+correo+"','"+passwordstring+"')")
-=======
-<<<<<<< HEAD
-    cursor.execute("INSERT INTO CLIENTE(rut,correo,clave) VALUES("+rut+",'"+correo+"','"+passwordstring+"')")
-=======
-    cursor.execute("INSERT INTO CLIENTE(rut,correo,password) VALUES("+rut+",'"+correo+"','"+passwordstring+"')")
->>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
     conection.commit()
     flash('Contact Added successfully')
     shtml = '<script>alert("usuario registrado correctamente")</script>'
     shtml2 = '<script>alert("favor de iniciar sesion")</script>'
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
     return shtml +  shtml2 + render_template('index.html') 
     
 
 
-<<<<<<< HEAD
 @app.route('/entrar', methods =['POST']) 
-=======
-<<<<<<< HEAD
-@app.route('/entrar', methods =['POST']) 
-=======
-<<<<<<< HEAD
-@app.route('/entrar', methods =['POST','GET']) 
-=======
-@app.route('/entrar', methods =['POST']) 
->>>>>>> c4668f7cff593c63ec13a279ac0470de1ea3eb7f
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
 def entrar():
     if request.method == 'POST':
         conection = getConnection()
@@ -227,48 +150,11 @@ def salir():
 def departamentos():
     conection = getConnection()
     cur = conection.cursor()
-<<<<<<< HEAD
     cur.execute('SELECT * FROM departamento order by ID asc')
-=======
-<<<<<<< HEAD
-    cur.execute('SELECT * FROM departamento order by ID asc')
-=======
-<<<<<<< HEAD
-    cur.execute('SELECT * FROM departamento')
-=======
-    cur.execute('SELECT * FROM departamento order by ID asc')
->>>>>>> c4668f7cff593c63ec13a279ac0470de1ea3eb7f
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
     data = cur.fetchall()
     cur.close()
     return render_template('/admin/deptos.html', deptos = data)
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-@app.route('/agregar_depto', methods=['POST'])
-def agregar_depto():
-    if request.method == 'POST':
-        fullname = request.form['departamento']
-        phone = request.form['phone']
-        email = request.form['email']
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO contacts (fullname, phone, email) VALUES (%s,%s,%s)", (fullname, phone, email))
-        mysql.connection.commit()
-        flash('Contact Added successfully')
-        return redirect(url_for('Index'))
-
-
-
-
-
-
-=======
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
 @app.route('/agregar_depto', methods=['POST','GET'])
 def agregar_depto():
     if request.method == 'POST':
@@ -329,64 +215,6 @@ def delete_depto(id):
     flash('Contact Removed Successfully')
     return redirect(url_for('departamentos'))
 #FIN administracion de los departamentos-------------------------------------------------------------------------------------------------------------------
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> c4668f7cff593c63ec13a279ac0470de1ea3eb7f
-=======
-    return shtml +  shtml2 + render_template('login.html') 
-
-
-
-@app.route('/entrar', methods =['POST','GET']) 
-def entrar():
-    conection = getConnection()
-    cursor = conection.cursor()
-    cursor2 = conection.cursor()
-    btemail = request.form['btemail']
-    btpassword = request.form['btpassword']
-    sql_fetch_date = ("SELECT CORREO FROM CLIENTE WHERE CORREO = ('"+btemail+"')")
-    sql_fetch_date2 = ("SELECT PASSWORD FROM CLIENTE WHERE CORREO = ('"+btemail+"')")
-    cursor.execute(sql_fetch_date)
-    cursor2.execute(sql_fetch_date2)
-    row = cursor.fetchone()
-    row2 = cursor2.fetchone()
-    str = ''.join(row2)
-    row3 = str.encode("utf-8")
-    print (str)
-    newbt = btpassword.encode("utf-8")
-    print(newbt)
-    issamepassword = bcrypt.checkpw(newbt,row3)
-    shtml = '<script>alert("no coincide ningun usuario con estas credenciales")</script>'
-    if row != None:
-        if issamepassword == True:
-            print(issamepassword)
-            request.method == 'POST'
-            session['email'] = request.form['btemail']
-            return redirect(url_for('servicio'))
-        else:
-            print(issamepassword)
-            
-    
-            
-    else:
-        return shtml + render_template('login.html')
-
-
-@app.route('/salir')
-def salir():
-    # Clear the email stored in the session object
-    session.pop('email', default=None)
-    return render_template('index.html')
-
-
-@app.route('/servicio')
-def servicio():
-    return render_template('usuario/servicio.html')
->>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
 
 if __name__ == '__main__':
  app.run(debug=True)

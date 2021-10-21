@@ -5,99 +5,6 @@
 
 
 <div class="row">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-    <div class="col-md-5">
-      {% with messages = get_flashed_messages()  %}
-      {% if messages %}
-      {% for message in messages %}
-      <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ message }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      {% endfor %}
-      {% endif %}
-      {% endwith %}
-      <div class="card card-body">
-        <form action="" method="POST">
-          <div class="form-group">
-            <input type="text" class="form-control" name="fullname" placeholder="FullName">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="email" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="phone" placeholder="Phone">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="phone" placeholder="Phone">
-          </div>
-          <button class="btn btn-primary btn-block">
-            Save 
-          </button>
-        </form>
-      </div>
-    </div>
-
-    <div class="col-md-7">
-      <table class="table table-striped table-hover table-bordered table-sm bg-white">
-        <thead>
-          <tr>
-            <td>ID</td>
-            <td>fullname</td>
-            <td>email</td>
-            <td>phone</td>
-            <td>Operations</td>
-          </tr>
-        </thead>
-        <tbody>
-          {% for depto in deptos %}
-          <tr>
-            <td>{{depto.0}}</td>
-            <td>{{depto.1}}</td>
-            <td>{{depto.2}}</td>
-            <td>{{depto.3}}</td>
-            <td>{{depto.4}}</td>
-            <td>
-              <a href="/edit/{{depto.0}}" class="btn btn-secondary">edit</a>
-              <a href="/delete/{{depto.0}}" class="btn btn-danger btn-delete">delete</a>
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-<style>
-body {
-    background: #8E2DE2;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  
-  }
-  </style>
-<script>
-const btnDelete= document.querySelectorAll('.btn-delete');
-    if(btnDelete) {
-      const btnArray = Array.from(btnDelete);
-      btnArray.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-          if(!confirm('Are you sure you want to delete it?')){
-            e.preventDefault();
-          }
-        });
-      })
-    }
-    </script>
-=======
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
   <div class="col-md-5">
     {% with messages = get_flashed_messages() %}
     {% if messages %}
@@ -184,11 +91,4 @@ const btnDelete= document.querySelectorAll('.btn-delete');
     })
   }
 </script>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> c4668f7cff593c63ec13a279ac0470de1ea3eb7f
->>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
->>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
 {% endblock %}
