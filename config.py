@@ -9,8 +9,12 @@ try:
 <<<<<<< HEAD
         conection = cx_Oracle.connect("turismo_real/123456@localhost:1521/xe")
 =======
+<<<<<<< HEAD
+        conection = cx_Oracle.connect("turismo_real/123456@localhost:1521/xe")
+=======
         conection = cx_Oracle.connect("TEST/123456@localhost:1521/xe")
 >>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
         return conection
 except cx_Oracle.Error as error:
         print(error)

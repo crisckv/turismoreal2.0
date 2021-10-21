@@ -15,10 +15,14 @@ BEGIN
 END;
 
 <<<<<<< HEAD
+cursor.execute(statement, { 'a': nombredepto, 'b' : direccion, telefono,  rowadminid2})
+=======
+<<<<<<< HEAD
 
 =======
 cursor.execute(statement, { 'a': nombredepto, 'b' : direccion, telefono,  rowadminid2})
 >>>>>>> c4668f7cff593c63ec13a279ac0470de1ea3eb7f
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
 
 -- select deptos
     create or replace procedure select_deptos as

@@ -1,8 +1,12 @@
 <<<<<<< HEAD
 from flask import Flask, render_template, request, redirect, url_for, flash , session
 =======
+<<<<<<< HEAD
+from flask import Flask, render_template, request, redirect, url_for, flash , session
+=======
 from flask import Flask, render_template, request, redirect, url_for, flash , session, render_template_string
 >>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
 import bcrypt
 from config import getConnection
 
@@ -17,27 +21,39 @@ semilla = bcrypt.gensalt()
 @app.route('/')
 def home():
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
     if 'admin' in session:
         return fnAdmin([])
     if 'email' in session:
         return fnUsuario([])
+<<<<<<< HEAD
+=======
 =======
     if 'email' in session:
         return redirect(url_for('servicio'))
 >>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
     return render_template('index.html')
   
 @app.route('/login')
 def login():
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
     if 'admin' in session:
         return fnAdmin([])
     if 'email' in session:
         return fnUsuario([])
+<<<<<<< HEAD
+=======
 =======
     if 'email' in session:
         return redirect(url_for('servicio'))
 >>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
     return render_template('login.html')
 
 @app.route('/insertar_usuario', methods=['GET', 'POST'])
@@ -76,22 +92,33 @@ def insertar_usuario():
 <<<<<<< HEAD
     cursor.execute("INSERT INTO CLIENTE(rut,correo,clave) VALUES("+rut+",'"+correo+"','"+passwordstring+"')")
 =======
+<<<<<<< HEAD
+    cursor.execute("INSERT INTO CLIENTE(rut,correo,clave) VALUES("+rut+",'"+correo+"','"+passwordstring+"')")
+=======
     cursor.execute("INSERT INTO CLIENTE(rut,correo,password) VALUES("+rut+",'"+correo+"','"+passwordstring+"')")
 >>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
     conection.commit()
     flash('Contact Added successfully')
     shtml = '<script>alert("usuario registrado correctamente")</script>'
     shtml2 = '<script>alert("favor de iniciar sesion")</script>'
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
     return shtml +  shtml2 + render_template('index.html') 
     
 
 
 <<<<<<< HEAD
+@app.route('/entrar', methods =['POST']) 
+=======
+<<<<<<< HEAD
 @app.route('/entrar', methods =['POST','GET']) 
 =======
 @app.route('/entrar', methods =['POST']) 
 >>>>>>> c4668f7cff593c63ec13a279ac0470de1ea3eb7f
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
 def entrar():
     if request.method == 'POST':
         conection = getConnection()
@@ -174,14 +201,20 @@ def departamentos():
     conection = getConnection()
     cur = conection.cursor()
 <<<<<<< HEAD
+    cur.execute('SELECT * FROM departamento order by ID asc')
+=======
+<<<<<<< HEAD
     cur.execute('SELECT * FROM departamento')
 =======
     cur.execute('SELECT * FROM departamento order by ID asc')
 >>>>>>> c4668f7cff593c63ec13a279ac0470de1ea3eb7f
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
     data = cur.fetchall()
     cur.close()
     return render_template('/admin/deptos.html', deptos = data)
 
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 @app.route('/agregar_depto', methods=['POST'])
 def agregar_depto():
@@ -201,6 +234,7 @@ def agregar_depto():
 
 
 =======
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
 @app.route('/agregar_depto', methods=['POST','GET'])
 def agregar_depto():
     if request.method == 'POST':
@@ -261,6 +295,8 @@ def delete_depto(id):
     flash('Contact Removed Successfully')
     return redirect(url_for('departamentos'))
 #FIN administracion de los departamentos-------------------------------------------------------------------------------------------------------------------
+<<<<<<< HEAD
+=======
 >>>>>>> c4668f7cff593c63ec13a279ac0470de1ea3eb7f
 =======
     return shtml +  shtml2 + render_template('login.html') 
@@ -313,6 +349,7 @@ def salir():
 def servicio():
     return render_template('usuario/servicio.html')
 >>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
 
 if __name__ == '__main__':
  app.run(debug=True)

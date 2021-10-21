@@ -14,6 +14,9 @@ signUpBtn.addEventListener("click", () => {
 
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 fistForm.addEventListener("submit", (e) => e.preventDefault());
 secondForm.addEventListener("submit", (e) => e.preventDefault());
 >>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
