@@ -1,0 +1,27 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card card-body">
+      <form action="/update/{{depto.0}}" method="POST">
+        <div class="form-group">
+          <input type="text" name="nombredepto" value="{{depto.1}}" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="text" name="direccion" value="{{depto.2}}" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="number" name="telefono" value="{{depto.3}}" class="form-control">
+        </div>
+<div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">
+            Update
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
