@@ -12,3 +12,14 @@ signUpBtn.addEventListener("click", () => {
 	container.classList.add("right-panel-active");
 });
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+fistForm.addEventListener("submit", (e) => e.preventDefault());
+secondForm.addEventListener("submit", (e) => e.preventDefault());
+>>>>>>> 1511be2a7e1758209e68db70997a3b1a6b681013
+>>>>>>> d7d2b04ac57d0f73d994057d949996550205ce03
+>>>>>>> 270e952fe558b8ea65cace5a8dbec1d3ae183d09
