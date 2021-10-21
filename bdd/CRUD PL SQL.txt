@@ -1,0 +1,65 @@
+
+-- insert de tablas
+create or replace NONEDITIONABLE PROCEDURE registro(
+	   p_rut IN cliente.rut%TYPE,
+	   p_email IN CLIENTE.CORREO%TYPE,
+	   p_password IN cliente.clave%TYPE)
+IS
+BEGIN
+
+  INSERT INTO CLIENTE ("RUT", "CORREO", "CLAVE") 
+  VALUES (p_rut, p_email,p_password);
+
+  COMMIT;
+
+END;
+
+<<<<<<< HEAD
+
+=======
+cursor.execute(statement, { 'a': nombredepto, 'b' : direccion, telefono,  rowadminid2})
+>>>>>>> c4668f7cff593c63ec13a279ac0470de1ea3eb7f
+
+-- select deptos
+    create or replace procedure select_deptos as
+  rf_cursor_deptos SYS_REFCURSOR;
+begin
+  open rf_cursor_deptos for
+    SELECT *
+      FROM departamento;
+    dbms_sql.return_result(rf_cursor_deptos);
+   
+end select_deptos;
+
+--exec select_deptos;
+
+--trigger autoincrementable departamentos id
+
+ALTER TABLE departamento ADD (
+  CONSTRAINT id PRIMARY KEY (ID));
+  
+  CREATE SEQUENCE id START WITH 1;
+  
+  CREATE OR REPLACE TRIGGER depto_id 
+BEFORE INSERT ON departamento 
+FOR EACH ROW
+
+BEGIN
+  SELECT id.NEXTVAL
+  INTO   :new.id
+  FROM   dual;
+END;
+/
+
+--trigger autoincremento depto id
+CREATE SEQUENCE id_sec
+  START WITH 1
+  INCREMENT BY 1
+  CACHE 100;  
+  
+CREATE OR REPLACE TRIGGER depto_id
+  BEFORE INSERT ON departamento
+  FOR EACH ROW
+BEGIN
+  :new.id := id_sec.nextval;
+END; 

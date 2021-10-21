@@ -1,0 +1,156 @@
+{% extends "usuario/layout.html" %}
+
+
+
+{% block content%}
+<br><br>
+<main class="container">
+  <div class="row nosotros justify-content-center">
+    <div class="col-12 text-center">
+      <h2 class="subtitulo"></h2>
+      <h3 class="titulo">Empresa familiar con 10 años de experiencia.</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore officiis illum sequi quia doloribus quas consequatur autem inventore soluta voluptatum vero quibusdam illo cum, quod nostrum aspernatur. Autem, amet quasi.
+      </p>
+      <a href="/reserva" class="enlace">Reserva tu próximo departamento</a>
+    </div>
+  </div>
+
+  <div class="row productos">
+    <article class="col-12 text-center">
+     
+      <h2 class="subtitulo"></h2>
+      <p class="titulo">Nuestros servicios</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit veniam saepe cum aspernatur neque odit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae deserunt perferendis. Lorem ipsum dolor sit amet consectetur.</p>
+    </article>
+
+    <div class="col-12">
+      <div class="row justify-content-center">
+        <article class="col-6 col-lg-3 py-1">
+          <figure class="producto">
+            <img src="{{ url_for('static', filename='img/departamento.jpg') }}" class="img-fluid" alt="">
+            <figcaption class="overlay">
+              <p class="overlay-texto">Departamentos</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="col-6 col-lg-3 py-1">
+          <figure class="producto">
+            <img src="{{ url_for('static', filename='img/tour.png') }}" alt="" height="10px">
+            <figcaption class="overlay">
+              <p class="overlay-texto">Tour</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="col-6 col-lg-3 py-1">
+          <figure class="producto">
+            <img src="{{ url_for('static', filename='img/taxi.jpg') }}" class="img-fluid" alt="">
+            <figcaption class="overlay">
+              <p class="overlay-texto">Transporte</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="col-6 col-lg-3 py-1">
+          <figure class="producto">
+            <img src="{{ url_for('static', filename='img/otros.jpg') }}" class="img-fluid" alt="">
+            <figcaption class="overlay">
+              <p class="overlay-texto">Otros servicios</p>
+            </figcaption>
+          </figure>
+        </article>
+
+        <button class="d-block btn-productos">Todos los productos</button>
+      </div>
+
+  </div>
+
+  </div></main>
+
+
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"
+      aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img
+        src="{{ url_for('static', filename='img/villarica.jpg') }}"
+        class="d-block w-100" alt="..." height="1000">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>VIÑA DEL MAR</h5>
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img
+        src="{{ url_for('static', filename='img/fotoelegante.jpg') }}"
+        class="d-block w-100" alt="..." height="1000">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>PUCÓN</h5>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img
+        src="{{ url_for('static', filename='img/pucon.jpg') }}"
+        class="d-block w-100" alt="..." height="1000">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>LA SERENA</h5>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<br>
+<br><br>
+<h1>Explora uno de nuestros hoteles.</h1>
+<div class="tabbed-box-content tab-0" style="display: block;">
+  <div style="width: auto"><div></div><div class="paragraph" style="text-align:center;">Para tener una mejor navegación, presiona las flechas guías &nbsp;←↕→ del navegador.</div>
+
+<div><div id="299928385431089060" alig="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><iframe src="https://www.google.com/maps/embed?pb=!1m0!4v1499896596443!6m8!1m7!1sF%3A-gjqZjGioaE8%2FWUGnUtcEJJI%2FAAAAAAAAA2k%2FG5VhzkS8iBYfdpa2wyd30VXA5Fi_8XepwCLIBGAYYCw!2m2!1d-33.44365187860156!2d-70.64831313988111!3f177.11636975606456!4f-5.807687464204918!5f1.0605439775114949" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe></div>
+<br><br><br><br>
+<div class="container">
+  <div class="row acerca-de justify-content-around">
+    <article class="col-10 col-sm-5">
+      <figure class="text-center">
+        <img src="{{ url_for('static', filename='img/icon-team.png') }}" alt="">
+        <figcaption>
+          <p>
+            <strong class="mb-2">Un equipo de expertos</strong>
+            </p><div class="w-100"></div>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem totam dolorem error.
+          <p></p>
+        </figcaption>
+      </figure>
+    </article>
+
+    <article class="col-10 col-sm-5">
+      <figure class="text-center">
+        <img src="{{ url_for('static', filename='img/icon-services.png') }}" alt="">
+        <figcaption>
+          <p>
+            <strong class="mb-2">Una historia de servicio</strong>
+            </p><div class="w-100"></div>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem totam dolorem error.
+          <p></p>
+        </figcaption>
+      </figure>
+    </article>
+  </div>
+</div>
+
+
+</div></div>
+</div>
+{% endblock %}

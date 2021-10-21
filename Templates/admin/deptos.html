@@ -1,0 +1,182 @@
+{% extends "admin/layout.html" %}
+{% block content%}
+<br><br><br><br><br>
+
+
+
+<div class="row">
+<<<<<<< HEAD
+    <div class="col-md-5">
+      {% with messages = get_flashed_messages()  %}
+      {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div class="card card-body">
+        <form action="" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="fullname" placeholder="FullName">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="email" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="phone" placeholder="Phone">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="phone" placeholder="Phone">
+          </div>
+          <button class="btn btn-primary btn-block">
+            Save 
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-md-7">
+      <table class="table table-striped table-hover table-bordered table-sm bg-white">
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>fullname</td>
+            <td>email</td>
+            <td>phone</td>
+            <td>Operations</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for depto in deptos %}
+          <tr>
+            <td>{{depto.0}}</td>
+            <td>{{depto.1}}</td>
+            <td>{{depto.2}}</td>
+            <td>{{depto.3}}</td>
+            <td>{{depto.4}}</td>
+            <td>
+              <a href="/edit/{{depto.0}}" class="btn btn-secondary">edit</a>
+              <a href="/delete/{{depto.0}}" class="btn btn-danger btn-delete">delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<style>
+body {
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  }
+  </style>
+<script>
+const btnDelete= document.querySelectorAll('.btn-delete');
+    if(btnDelete) {
+      const btnArray = Array.from(btnDelete);
+      btnArray.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          if(!confirm('Are you sure you want to delete it?')){
+            e.preventDefault();
+          }
+        });
+      })
+    }
+    </script>
+=======
+  <div class="col-md-5">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="card card-body">
+      <form action="/agregar_depto" method="POST">
+        <div class="form-group">
+          <input type="text" class="form-control" name="nombredepto" placeholder="Departamento">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="direccion" placeholder="Direccion">
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control" name="telefono" placeholder="Telefono">
+        </div>
+        <button class="btn btn-primary btn-block">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="col-md-7">
+    <table class="table table-striped table-hover table-bordered table-sm bg-white">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>fullname</td>
+          <td>email</td>
+          <td>phone</td>
+          <td>Operations</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for depto in deptos %}
+        <tr>
+          <td>{{depto.0}}</td>
+          <td>{{depto.1}}</td>
+          <td>{{depto.2}}</td>
+          <td>{{depto.3}}</td>
+          <td>{{depto.4}}</td>
+          <td>
+            <a href="/edit/{{depto.0}}" class="btn btn-secondary">edit</a>
+            <a href="/delete/{{depto.0}}" class="btn btn-danger btn-delete">delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+<style>
+  body {
+    background: #1488CC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2B32B2, #1488CC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+  }
+</style>
+<script>
+  const btnDelete = document.querySelectorAll('.btn-delete');
+  if (btnDelete) {
+    const btnArray = Array.from(btnDelete);
+    btnArray.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        if (!confirm('Are you sure you want to delete it?')) {
+          e.preventDefault();
+        }
+      });
+    })
+  }
+</script>
+>>>>>>> c4668f7cff593c63ec13a279ac0470de1ea3eb7f
+{% endblock %}
