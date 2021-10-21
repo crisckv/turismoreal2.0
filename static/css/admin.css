@@ -1,0 +1,27 @@
+
+footer {
+	  position: fixed;
+      left:0px;
+      bottom:0px;
+      height:35px;
+      width:100%;
+      background: #0F2027;  /* fallback for old browsers */
+	  background: rgb(0, 0, 0);
+
+
+   }
+
+      
+.h1-footer{
+      text-align:center;
+      color:rgb(255, 255, 255);
+   }
+
+
+
+.navbar {
+	position: fixed;
+	width:100%;
+
+
+ }
