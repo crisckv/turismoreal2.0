@@ -1,0 +1,46 @@
+{% extends "admin/layout.html" %}
+{% block content%}
+<div class="Container">
+    <h1> MANTENER DISPONIBILIDAD DE DEPARTAMENTOS</h1>
+    <table class="table table-striped table-bordered bg-white">
+        <td>Aqui Puedes dejar en mantencion los departamentos</td>
+    </table>
+    <table class="table table-striped table-bordered bg-white">
+        <thead>
+          <tr>
+            <td>ID Departamento</td>
+            <td>Dirección</td>
+            <td>ubicación</td>
+            <td>N° Piso</td>
+            <td>Numero</td>
+            <td>Disponibilidad</td>
+            <td>Opción</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for habitacion in habitaciones %}
+          <tr>
+            <td>{{habitacion.0}}</td>
+            <td>{{habitacion.1}}</td>
+            <td>{{habitacion.2}}</td>
+            <td>{{habitacion.4}}</td>
+            <td>{{habitacion.5}}</td>
+            <td>{{habitacion.6}}</td>
+            <td>
+              <a href="/editar_hab/{{habitacion.0}}" class="btn btn-secondary">Ingresar a Mantencion</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card card-body">
+      <form action="/updateDepa/{{depa.0}}" method="POST">
+        <div class="form-group">
+          ¿Ingresar a Mantencion?
+          <div class="col-5">
+            <select class="form-select" id="validationCustom03" name="mantencion" required>
+              <option selected>Disponible</option>
+              <option>Mantencion</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid state.
+            </div>
+            <br><br>
+<div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block">
+            Actualizar
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

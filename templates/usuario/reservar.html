@@ -1,0 +1,113 @@
+{% extends "usuario/layout.html" %}
+{% block content %}
+
+
+</main>
+
+<div class="tab-pane fade show active container" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <h2 class="h4 m-4 text-primary"></h2>
+
+    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+
+        <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary text-white">Viña Del Mar / ID:1</h5>
+                <img src="https://imgclasificados3.emol.com/Proyectos/imagenes//PR_FOTO_4767_1.jpg" height="200"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text text-white-50 description">Departamento con la mejor vista de la quinta
+                        región. Departamento hasta 3 personas.</p>
+                    <br><br>
+                    <h5 class="text-primary text-white">Desde: <span class="precio">$50.000</span></h5>
+                    <div class="d-grid gap-2">
+                        <a class="btn btn-primary button" href="/Viña">Reservar Departamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary text-white">Puerto Varas / ID:2</h5>
+                <img src="https://www.avellaneda.cl/wp-content/uploads/2017/12/Living_920x710-1.jpg"
+                    height="200" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text text-white-50 description">Lo mejor del sur de Chile justo aqui, Ven y disfruta
+                        al maximo la experiencia. Departamento hasta 4 personas</p><br>
+                    <h5 class="text-primary text-white">Desde: <span class="precio">$60.000</span></h5>
+                    <div class="d-grid gap-2">
+                        <a class="btn btn-primary button" href="/PuertoVaras">Reservar Departamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary text-white">La Serena / ID:3 </h5>
+                <img src="https://images.sparairnos.com/property/64551/images/95698/full/74c932d8-2dc4-4e16-b6a0-31dcc00c974c"
+                    height="200" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text text-white-50 description">La serena, una de los mejores lugares para descansar con su hermosa playa.
+                        Departamento hasta 5 personas.
+                    </p>
+                    <br>
+                    <h5 class="text-primary text-white">Desde: <span class="precio">$70.000</span></h5>
+                    <div class="d-grid gap-2">
+                        <a class="btn btn-primary button" href="/LaSerena">Reservar Departamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary text-white">Pucón / ID:4</h5>
+                <img src="{{ url_for('static', filename='img/pucon.jpg') }}" height="200">
+                <div class="card-body">
+                    <p class="card-text text-white-50 description">Visita el Volcán Villarica y todos sus centros turisticos de este hermoso lugar.
+                         Departamento hasta 4 personas </p><br>
+                    <h5 class="text-primary text-white">Desde: <span class="precio">$80.000</span></h5>
+                    <div class="d-grid gap-2">
+                        <a class="btn btn-primary button" href="/Pucon">Reservar Departamento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <h2 class="h4 m-4 text-primary text-center text-white">SERVICIOS EXTRAS</h2>
+
+    <div class="row row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 justify-content-center">
+
+        <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary text-white">Extras</h5>
+                <img src="https://www.beetrack.com/hubfs/Ruta%20de%20transporte.jpg" height="200" class="card-img-top"
+                    alt="...">
+                <div class="card-body">
+                    <p class="card-text text-white-50 description">Conoce nuestros servicios extras asociados junto con
+                        las reservas</p>
+                    <div class="d-grid gap-2">
+                        <a class="btn btn-success button disabled">Reserva junto con las habitaciones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col d-flex justify-content-center mb-4">
+            <div class="card shadow mb-1 bg-dark rounded" style="width: 20rem;">
+                <h5 class="card-title pt-2 text-center text-primary text-white">Chofer</h5>
+                <img src="https://a0.cdnfan.com/images/M/0/5/3/8/mascarilla-en-el-coche_hd_121884.jpg" height="200"
+                    class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text text-white-50 description">Deja tu auto, nosotros nos encargamos de movilizarte
+                        con nuestros choferes</p>
+
+                    <div class="d-grid gap-2">
+                        <a class="btn btn-success button disabled">Reserva junto con las habitaciones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+{% endblock %}

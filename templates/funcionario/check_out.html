@@ -1,0 +1,32 @@
+{% extends "funcionario/layout.html" %}
+
+
+
+{% block content%}
+
+<br><br><br><br>
+
+<Div class="container">
+  <div class="col-auto p-5 text-center">
+  <form action="/terminar/{{dato.0}}" method="POST">
+    <div >
+      <label for="validationDefault01" class="form-label">INGRESAR MULTA (DINERO)</label>
+      <input type="number" class="form-control" id="validationDefault01" name="multa">
+      <label for="validationDefault01" class="form-label">DESCRIPCION DE LA MULTA</label>
+      <textarea class="form-control" rows="3"></textarea>
+    </div>
+   <br><br>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">TERMINAR</button>
+    </div>
+  </form> <br>
+  <div class="col-12">
+    <a href="/pdf/{{dato.0}}" class="btn btn-danger">BOLETA / RECIBO</a>
+    <a href="/Send/{{dato.0}}" class="btn btn-danger">ENVIAR DETALLE A EMAIL DEL CLIENTE</a>
+  </div>
+</Div>
+
+</div>
+
+
+{% endblock %}

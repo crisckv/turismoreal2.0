@@ -1,0 +1,101 @@
+{% extends "admin/layout.html" %}
+{% block content%}
+<br><br><br>
+
+<div class="container">
+  <div class=" row justify-content-center">
+    <div class="col-8">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div class="card card-body">
+        <form action="/agregar_depto" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="nombredepto" placeholder="Nombre Nuevo Departamento" required>
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="text" class="form-control" name="direccion" placeholder="Direccion" required>
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="number" class="form-control" name="telefono" placeholder="Telefono" required>
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="number" class="form-control" name="valor" placeholder="Valor" required>
+          </div>
+          <br>
+          <button class="btn btn-primary btn-block">
+            Guardar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class=" row justify-content-center ">
+      <div class="col-8 offset-md">
+        <br><br><br>
+        <div class="table-responsive">
+          <table class="table table-striped table-bordered bg-white">
+            <thead>
+              <tr>
+                <td>ID</td>
+                <td>DIRECCION</td>
+                <td>COMUNA</td>
+                <td>REGION</td>
+                <td>PISO</td>
+                <td>DISPONIBILIDAD</td>
+                <td>EDITAR / BORRAR</td>
+              </tr>
+            </thead>
+            <tbody>
+              {% for depto in deptos %}
+              <tr>
+                <td>{{depto.0}}</td>
+                <td>{{depto.1}}</td>
+                <td>{{depto.2}}</td>
+                <td>{{depto.3}}</td>
+                <td>{{depto.4}}</td>
+                <td>{{depto.6}}</td>
+                <td>
+                  <a href="/edit/{{depto.0}}" class="btn btn-secondary">EDITAR</a>
+                  <a href="/delete/{{depto.0}}" class="btn btn-danger btn-delete">BORRAR</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+  const btnDelete = document.querySelectorAll('.btn-delete');
+  if (btnDelete) {
+    const btnArray = Array.from(btnDelete);
+    btnArray.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        if (!confirm('Esta seguro que desea eliminar el departamento?')) {
+          e.preventDefault();
+        }
+      });
+    })
+  }
+</script>
+
+
+{% endblock %}

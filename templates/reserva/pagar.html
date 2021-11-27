@@ -1,0 +1,58 @@
+{% extends "usuario/layout.html" %}
+{% block content%}
+
+
+<form>
+<div class="col-auto p-5 text-center">
+    <div class="texto-reserva">
+        <p>ABONO DE 30% DEL TOTAL PARA DEJAR RESERVADO.
+        </p>
+    </div>
+
+  
+    
+    TOTAL A PAGAR DESPUES (70%): ${{pago70}}
+    <br>
+    TOTAL A PAGAR AHORA (%30): ${{pago30}}
+    <br>
+    TOTAL COMPLETO (%100): ${{data3}}
+    <div id="paypal-button-container"></div>
+    </form>
+<form action="/pagado/{{id}}" method="post" >
+    <button type="submit" class="btn btn-success">Listo</button>
+</form>
+
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AUf1z0MY-_x7DsdkbH8gse-yN5lP_AxCwOe2oQfOrnkUwVYHUU9otCRLuszyYYhXupBL5wAR7bRl8DWr">
+        </script>
+    <script>
+        paypal.Buttons({
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: 1
+                        }
+                    }]
+                });
+            },
+            onApprove: function (data) {
+                return fetch('/pago/', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                        'X-CSRFToken': csrftoken,
+                    },
+                    body: JSON.stringify({
+                        orderID: data.orderID
+                    })
+                }).then(function (res) {
+                    return res.json();
+                }).then(function (details) {
+                    alert(' ' + details.mensaje);
+                })
+            }
+        }).render('#paypal-button-container');
+    </script>
+</div>
+{% endblock %}

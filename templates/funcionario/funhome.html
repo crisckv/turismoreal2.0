@@ -1,0 +1,21 @@
+{% extends "funcionario/layout.html" %}
+
+
+
+{% block content%}
+<br><br><br><br><br><br><br>
+<div class="container" > 
+<div class="col-auto p-5 text-center">
+  <form class="row g-3 needs-validation" method="post">
+      <label for="validationCustom01" class="form-label">INGRESE RUT DE CLIENTE( SIN PUNTOS NI GUION) </label>
+      <input type="number" min="1111111" max="500000000" class="form-control" id="validationCustom01" name="consultaRut"
+        required>
+      <br><br>
+      <button class="btn btn-primary" type="submit" href="/funcionario.CheckIn"> Buscar</button>
+      <div class="valid-feedback">
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,87 @@
+{% extends "usuario/layout.html" %}
+{% block content%}
+
+<div class="row justify-content-center">
+  <div class="col-8 offset-md">
+    <br><br><br>
+    <div class="table-responsive">
+      <table class=" text-center table table-striped table-bordered bg-white">
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>Estado</td>
+            <td>Fecha de Solicitud</td>
+            <td>Dia Que Ingresa</td>
+            <td>Noches</td>
+            <td>ID departamento</td>
+            <td>Multa Asociada</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for reserva in reservas %}
+          <tr>
+            <td>{{reserva.0}}</td>
+            <td>{{reserva.1}}</td>
+            <td>{{reserva.2}}</td>
+            <td>{{reserva.3}}</td>
+            <td>{{reserva.11}}</td>
+            <td>{{reserva.8}}</td>
+            <td>{{reserva.6}}</td>
+            <td>
+              <a href="/extras/{{reserva.0}}" class="btn btn-danger">AGREGAR SERVICIOS</a>
+            </td>
+            <td>
+              <a href="/pagar/{{reserva.0}}" class="btn btn-danger">PAGAR RESERVA</a>
+            </td>
+            <td>
+              <a href="/pdf/{{reserva.0}}" class="btn btn-danger">BOLETA / RECIBO</a>
+            </td>
+            <td>
+              <a href="/deleteReserva/{{reserva.0}}" class="btn btn-danger btn-delete" disabled >ELIMINAR RESERVA</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+</style>
+<script>
+  const btnDelete = document.querySelectorAll('.btn-delete');
+  if (btnDelete) {
+    const btnArray = Array.from(btnDelete);
+    btnArray.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        if (!confirm('Esta seguro que desea eliminar la reserva?')) {
+          e.preventDefault();
+        }
+      });
+    })
+  }
+</script>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+{% endblock %}

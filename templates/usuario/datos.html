@@ -1,0 +1,58 @@
+{% extends "usuario/layout.html" %}
+
+
+
+{% block content%}
+<br><br><br><br>
+<Div class="container">
+  <form class="row g-3" action="/updateMisDatos/{{dato.0}}" method="POST">
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="validationDefault01" name="nombre" value="{{dato.1}}" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">Apellido</label>
+      <input type="text" class="form-control" id="validationDefault02" name="apellido"   value="{{dato.2}}" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">Edad</label>
+      <input type="number" class="form-control" id="validationDefault03" name="edad" value="{{dato.5}}" required>
+    </div>
+    <div class="col-md-12"></div>
+    <div class="col-md-4">
+      <label for="validationDefault03" class="form-label">Telefono</label>
+      <input type="number" class="form-control" id="validationDefault04" name="telefono" value="{{dato.4}}" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault05" class="form-label">RUT</label>
+      <input type="text" class="form-control" id="validationDefault05" value="{{dato.0}}" disabled>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault05" class="form-label">Correo</label>
+      <input type="text" class="form-control" id="validationDefault05" value="{{dato.3}}" disabled>
+    </div>
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Actualizar Datos</button>
+    </div>
+  </form>
+</Div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+{% endblock %}
